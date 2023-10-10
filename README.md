@@ -1,1 +1,1 @@
-# Rails Chartkick Example
+# Sales Dashboard - Chartkick Example
