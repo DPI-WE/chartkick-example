@@ -1,4 +1,11 @@
 <div class="container">
+  <div>
+    <%= pie_chart amount_by_category_sales_path, download: {filename: "amount_by_category_sales"}, title: "Amount by category"  %>
+  </div>
+
+  <div>
+    <%= column_chart this_month_daily_sales_path, download: {filename: "this_month_daily_sales"},  title: "Current month daily sales" %>
+  </div>
   <table class="table">
     <thead>
       <tr>
