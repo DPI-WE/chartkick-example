@@ -1,21 +1,8 @@
 <div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Sale Date</th>
-        <th scope="col">Amount</th>
-        <th scope="col">Product Category</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @sales.each do |sale| %>
-          <th scope="row"><%= sale.id %></th>
-          <td><%= sale.sale_date %></td>
-          <td><%= sale.amount %></td>
-          <td><%= sale.product_category %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% @sales %>
+  
+
+  <%= pie_chart sales_by_category_sales_path, title: "Sales by category", legend: false %>
+
+  <%= line_chart sales_by_day_this_month_sales_path, title: "Sales by day (#{Date.today.strftime("%B")})" %>
 </div>
