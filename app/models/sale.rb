@@ -22,4 +22,20 @@ class Sale < ApplicationRecord
     software_and_digital: 'Software & Digital Services',
     automotive_and_tools: 'Automotive & Tools'
   }
+
+  def self.to_csv(sales = self.all)
+    headers = ["id", "amount", "product_category", "sale_date"]
+    csv = CSV.generate(headers: true) do |csv|
+      csv << headers
+      sales.each do |sale|
+        row = []
+        row.push(sale.id)
+        row.push(sale.amount)
+        row.push(sale.product_category)
+        row.push(sale.sale_date)
+        csv << row
+      end
+    end
+    return csv
+  end
 end
