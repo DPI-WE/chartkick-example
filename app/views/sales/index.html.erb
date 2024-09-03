@@ -1,4 +1,21 @@
 <div class="container">
+  <div class="row">
+    <div class="my-2">
+      <h3>Sales by month</h3>
+      <%= line_chart sales_by_month_sales_path %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="my-2 col-md-6">
+      <h3>Sales by category</h3>
+      <%= pie_chart sales_by_category_sales_path %>
+    </div>
+    <div class="my-2 col-md-6">
+      <h3>Daily sales this month</h3>
+      <%= column_chart daily_sales_this_month_sales_path %>
+    </div>
+  </div>
+  
   <table class="table">
     <thead>
       <tr>
